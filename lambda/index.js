@@ -15,7 +15,6 @@ const LaunchRequestHandler = {
         
         return handlerInput.responseBuilder
             .speak(speakOutput)
-            .reprompt(speakOutput)
             .getResponse();
     }
 };
