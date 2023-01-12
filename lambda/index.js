@@ -25,7 +25,7 @@ const CaptureBirthdayIntentHandler = {
         const year = handlerInput.requestEnvelope.request.intent.slots.year.value;
         const month = handlerInput.requestEnvelope.request.intent.slots.month.value;
         const day = handlerInput.requestEnvelope.request.intent.slots.day.value;
-        const speechText = 'ハローワールド';
+        const speechText = `ありがとうございます。誕生日は${year}年${month}月${day}日ですね。`;
         return handlerInput.responseBuilder
             .speak(speechText)
             //.reprompt('add a reprompt if you want to keep the session open for the user to respond')
