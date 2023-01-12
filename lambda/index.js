@@ -11,7 +11,7 @@ const LaunchRequestHandler = {
         const speechText = 'こんにちは。ケークウォークです。';
         return handlerInput.responseBuilder
             .speak(speechText)
-            //.reprompt(speechText)
+            .reprompt(speechText)
             .getResponse();
     }
 };
