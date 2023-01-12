@@ -22,6 +22,9 @@ const CaptureBirthdayIntentHandler = {
             && handlerInput.requestEnvelope.request.intent.name === 'CaptureBirthdayIntent';
     },
     handle(handlerInput) {
+        const year = handlerInput.requestEnvelope.request.intent.slots.year.value;
+        const month = handlerInput.requestEnvelope.request.intent.slots.month.value;
+        const day = handlerInput.requestEnvelope.request.intent.slots.day.value;
         const speechText = 'ハローワールド';
         return handlerInput.responseBuilder
             .speak(speechText)
@@ -35,10 +38,6 @@ const HelpIntentHandler = {
             && handlerInput.requestEnvelope.request.intent.name === 'AMAZON.HelpIntent';
     },
     handle(handlerInput) {
-        const year = handlerInput.requestEnvelope.request.intent.slots.year.value;
-        const month = handlerInput.requestEnvelope.request.intent.slots.month.value;
-        const day = handlerInput.requestEnvelope.request.intent.slots.day.value;
-        
         const speechText = '「ハロー」と言ってみてください。どうぞ';
 
         return handlerInput.responseBuilder
