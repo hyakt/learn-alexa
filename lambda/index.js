@@ -16,10 +16,10 @@ const LaunchRequestHandler = {
             .getResponse();
     }
 };
-const HelloWorldIntentHandler = {
+const CaptureBirthdayIntentHandler = {
     canHandle(handlerInput) {
         return handlerInput.requestEnvelope.request.type === 'IntentRequest'
-            && handlerInput.requestEnvelope.request.intent.name === 'HelloWorldIntent';
+            && handlerInput.requestEnvelope.request.intent.name === 'CaptureBirthdayIntent';
     },
     handle(handlerInput) {
         const speechText = 'ハローワールド';
@@ -35,6 +35,10 @@ const HelpIntentHandler = {
             && handlerInput.requestEnvelope.request.intent.name === 'AMAZON.HelpIntent';
     },
     handle(handlerInput) {
+        const year = handlerInput.requestEnvelope.request.intent.slots.year.value;
+const month = handlerInput.requestEnvelope.request.intent.slots.month.value;
+const day = handlerInput.requestEnvelope.request.intent.slots.day.value;
+        
         const speechText = '「ハロー」と言ってみてください。どうぞ';
 
         return handlerInput.responseBuilder
