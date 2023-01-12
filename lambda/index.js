@@ -8,10 +8,11 @@ const LaunchRequestHandler = {
         return handlerInput.requestEnvelope.request.type === 'LaunchRequest';
     },
     handle(handlerInput) {
-        const speechText = 'こんにちは。ケークウォークです。';
+        const speechText = 'こんにちは、 ケーク タイムへようこそ。お誕生日を教えてください。';
+        const repromptText = '私は二千十四年十一月六日に生まれました。あなたの誕生日はいつですか？';
         return handlerInput.responseBuilder
             .speak(speechText)
-            .reprompt(speechText)
+            .reprompt(repromptText)
             .getResponse();
     }
 };
