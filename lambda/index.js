@@ -36,8 +36,8 @@ const HelpIntentHandler = {
     },
     handle(handlerInput) {
         const year = handlerInput.requestEnvelope.request.intent.slots.year.value;
-const month = handlerInput.requestEnvelope.request.intent.slots.month.value;
-const day = handlerInput.requestEnvelope.request.intent.slots.day.value;
+        const month = handlerInput.requestEnvelope.request.intent.slots.month.value;
+        const day = handlerInput.requestEnvelope.request.intent.slots.day.value;
         
         const speechText = '「ハロー」と言ってみてください。どうぞ';
 
