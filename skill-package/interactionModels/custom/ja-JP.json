@@ -1,0 +1,120 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "ケークタイム",
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        },
+        {
+          "name": "CaptureBirthdayIntent",
+          "slots": [
+            {
+              "name": "day",
+              "type": "AMAZON.NUMBER"
+            },
+            {
+              "name": "year",
+              "type": "AMAZON.FOUR_DIGIT_NUMBER"
+            },
+            {
+              "name": "month",
+              "type": "AMAZON.NUMBER"
+            }
+          ],
+          "samples": [
+            "私は {year} 年 {month} 月に生まれました",
+            "私は {month} 月 {day} 日に生まれました",
+            "{year} 年 {month} 月",
+            "{year} 年 {month} 月 {day} 日",
+            "{month} 月 {day} 日",
+            "私は {year} 年 {month} 月 {day} 日に生まれました"
+          ]
+        }
+      ],
+      "types": []
+    },
+    "dialog": {
+      "intents": [
+        {
+          "name": "CaptureBirthdayIntent",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "day",
+              "type": "AMAZON.NUMBER",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.1069895772898.1298194842317"
+              }
+            },
+            {
+              "name": "year",
+              "type": "AMAZON.FOUR_DIGIT_NUMBER",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.1069895772898.780919817239"
+              }
+            },
+            {
+              "name": "month",
+              "type": "AMAZON.NUMBER",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.1069895772898.912817290408"
+              }
+            }
+          ]
+        }
+      ],
+      "delegationStrategy": "ALWAYS"
+    },
+    "prompts": [
+      {
+        "id": "Elicit.Slot.1069895772898.912817290408",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "何月生まれですか?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.1069895772898.1298194842317",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "何日生まれですか？"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.1069895772898.780919817239",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "何年に生まれましたか？"
+          }
+        ]
+      }
+    ]
+  },
+  "version": "7"
+}
