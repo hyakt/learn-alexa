@@ -177,8 +177,8 @@ exports.handler = Alexa.SkillBuilders.custom()
     new persistenceAdapter.S3PersistenceAdapter({bucketName:process.env.S3_PERSISTENCE_BUCKET})
   )
   .addRequestHandlers(
-    LaunchRequestHandler,
     HasBirthdayLaunchRequestHandler,
+    LaunchRequestHandler,
     CaptureBirthdayIntentHandler,
     HelpIntentHandler,
     CancelAndStopIntentHandler,
