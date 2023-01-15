@@ -80,7 +80,7 @@ const HasBirthdayLaunchRequestHandler = {
     }
 
     return handlerInput.responseBuilder
-      .speak(speakOutput)
+      .speak(speechText)
       .getResponse();
   }
 };
