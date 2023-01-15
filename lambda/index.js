@@ -67,14 +67,11 @@ const HasBirthdayLaunchRequestHandler = {
     if (currentDate.getTime() > nextBirthday) {
       nextBirthday = Date.parse(`${month} ${day}, ${currentYear + 1}`);
     }
-
-    const oneDay = 24*60*60*1000;
-    const diffDays = Math.round(Math.abs((currentDate.getTime() - nextBirthday)/oneDay));
-
     // デフォルトのspeechTextを「X歳の誕生日、おめでとうございます」に置き換えます。
     let speechText = `${currentYear - year}歳のお誕生日、おめでとうございます！`;
 
     if (currentDate.getTime() !== nextBirthday) {
+      const oneDay = 24*60*60*1000;
       const diffDays = Math.round(Math.abs((currentDate.getTime() - nextBirthday)/oneDay));
       speechText = `おかえりなさい、${currentYear - year}歳のお誕生日まで、残り${diffDays}日です。`
     }
